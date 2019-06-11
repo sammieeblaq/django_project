@@ -1,0 +1,6 @@
+{% extends "users/base.html" %}
+{% block content %}
+    <a href="{% url 'add-user' %}">Add name and email</a>
+    <br>
+    <a href="{% url 'list-user' %}">list names and emails</a>
+{% endblock content %}

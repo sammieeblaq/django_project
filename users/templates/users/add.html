@@ -1,0 +1,27 @@
+{% extends "users/base.html" %}
+{% block content %}
+    <div class="content-section">
+        <form method="POST" action="{% url 'add_form_submission' %}">
+            {% csrf_token %}
+            <fieldset class="form-group">
+                <legend class="border-bottom mb-4">Add User</legend>
+                <div>
+                    <label>
+                        Name:
+                        <input type="text" name="userName" placeholder="name" required>
+                    </label>
+                </div>
+                <div>
+                    <label>
+                        Email:
+                        <input type="email" placeholder="email" name="userEmail" required>
+                        <small class="form-text">We'll never share your email with anyone</small>
+                    </label>
+                </div>
+            </fieldset>
+            <div class="form-group">
+                <button class="btn btn-secondary" type="submit">Add User </button>
+            </div>
+        </form>
+    </div>
+{% endblock content %}
